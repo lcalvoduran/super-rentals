@@ -1,3 +1,9 @@
+### REPOSITORIO LEANDRO EMBER.JS ###
+
+**INTRODUCCIÓN**
+Este repositorio será utilizado por Leandro Calvo Durán para que sirva de tutorial para la librería Ember.JS
+
+
 # super-rentals
 
 This README outlines the details of collaborating on this Ember application.
