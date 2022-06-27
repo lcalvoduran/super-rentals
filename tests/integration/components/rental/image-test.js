@@ -21,6 +21,3 @@ module('Integration | Component | rental/image', function (hooks) {
       .hasAttribute('alt', 'Teaching Tomster');
   });
 });
-
-
-
