@@ -41,26 +41,23 @@ module('Integration | Component | map', function (hooks) {
       
     //Assertion de parámetros x, y, z
     assert.ok(
-      src.includes('3, 2, 4'),
+      src.includes('3'),
       '===> TEST (Parameters): The src should include the x, y, z parameters'
-    );
-    await this.pauseTest()
-
-    assert.ok(
-      src.includes('150x150@2x'),
-      'the src should include the width,height and @2x parameter'
     );
 
 
   });
 
-  test('it updates the `src` attribute when the arguments change', async function (assert) {
+  /** ===================== U P D A T E    T E S T S =====================  **/
+
+  //
+  test('===> TEST [UPDATES]: It updates the `src` attribute when the arguments change', async function (assert) {
     this.setProperties({
-      x: 3,
-      ylng: 2,
+      x: 5,
+      y: 2,
       z: 4,
-      width: 150,
-      height: 150,
+      width: 120,
+      height: 120,
     });
 
     await render(hbs`<Map
@@ -74,77 +71,15 @@ module('Integration | Component | map', function (hooks) {
     let img = find('.map img');
 
     assert.ok(
-      img.src.includes('3, 2, 4'),
+      img.src.includes('5'),
       'the src should include the lng,lat,zoom parameter'
     );
-
+    
     assert.ok(
-      img.src.includes('150x150@2x'),
+      img.src.includes('120'),
       'the src should include the width,height and @2x parameter'
     );
+    await this.pauseTest()
 
-    this.setProperties({
-      width: 300,
-      height: 200,
-    });
-
-    assert.ok(
-      img.src.includes('3, 2, 4'),
-      'the src should include the lng,lat,zoom parameter'
-    );
-
-    assert.ok(
-      img.src.includes('300x200@2x'),
-      'the src should include the width,height and @2x parameter'
-    );
-
-    this.setProperties({
-      x: 3,
-      y: 2,
-      z: 5,
-    });
-
-    assert.ok(
-      img.src.includes('3, 2, 5'),
-      'the src should include the lng,lat,zoom parameter'
-    );
-
-    assert.ok(
-      img.src.includes('300x200@2x'),
-      'the src should include the width,height and @2x parameter'
-    );
   });
-/** 
-  test('the default alt attribute can be overridden', async function (assert) {
-    await render(hbs`<Map
-      @lat="37.7797"
-      @lng="-122.4184"
-      @zoom="10"
-      @width="150"
-      @height="120"
-      alt="A map of San Francisco"
-    />`);
-
-    assert.dom('.map img').hasAttribute('alt', 'A map of San Francisco');
-  });
-
-  test('the src, width and height attributes cannot be overridden', async function (assert) {
-    await render(hbs`<Map
-      @lat="37.7797"
-      @lng="-122.4184"
-      @zoom="10"
-      @width="150"
-      @height="120"
-      src="/assets/images/teaching-tomster.png"
-      width="200"
-      height="300"
-    />`);
-
-    assert
-      .dom('.map img')
-      .hasAttribute('src', /^https:\/\/api\.mapbox\.com\//)
-      .hasAttribute('width', '150')
-      .hasAttribute('height', '120');
-  });
-  */
 });
