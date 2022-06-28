@@ -2,9 +2,10 @@
 <div class="map">
  
 <img 
-alt = "Un mapa con sus coordenadas {{@lat}}, {{@lng}}"
+alt = "Un mapa con sus coordenadas {{@x}}, {{@y}}, {{@z}}"
 ...attributes
-src = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/No_colonies_blank_world_map.png/1200px-No_colonies_blank_world_map.png"
+
+src = "https://maptiles.p.rapidapi.com/es/map/v1/{{@z}}/{{@x}}/{{@y}}.png?rapidapi-key=b7ab4a7f0fmsh88285749f3ef147p14ce6cjsn1b1d0ff17bbd"
 width={{@width}}
 height={{@height}}
 >
