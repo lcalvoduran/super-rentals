@@ -7,8 +7,9 @@
       "owner": "Veruca Salt",
       "city": "San Francisco",
       "location": {
-        "lat": 37.7749,
-        "lng": -122.4194
+        "x": 3,
+        "y": 2,
+        "z": 4
       },
       "category": "Estate",
       "bedrooms": 15,

@@ -2,7 +2,7 @@
   <Rental::Image
 {{!--     src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg"
     alt="A picture of Grand Old Mansion" --}}
-    src={{@rental.image}}
+    src={{@rental.attributes.image}}
     alt="A picture of {{@rental.title}}"    
   />    
   <div class="details">
@@ -10,26 +10,26 @@
     <h3>{{@rental.title}}</h3>
     <div class="detail owner">
 {{!--       <span>Owner:</span> Veruca Salt --}}
-    <span>Owner:</span> {{@rental.owner}}
+    <span>Owner:</span> {{@rental.attributes.owner}}
     </div>
     <div class="detail type">
 {{!--       <span>Type:</span> Standalone --}}
-    <span>Type:</span> {{@rental.type}}
+    <span>Type:</span> {{@rental.attributes.type}}
     </div>
     <div class="detail location">
 {{!--       <span>Location:</span> San Francisco --}}
-    <span>Location:</span> {{@rental.city}}
+    <span>Location:</span> {{@rental.attributes.city}}
     </div>
     <div class="detail bedrooms">
 {{!--       <span>Number of bedrooms:</span> 15 --}}
-    <span>Number of bedrooms:</span> {{@rental.bedrooms}}
+    <span>Number of bedrooms:</span> {{@rental.attributes.bedrooms}}
     </div>
   </div>
  
   <Map
-    @x={{@rental.location.x}}
-    @y={{@rental.location.y}}
-    @z ={{@rental.location.z}}
+    @x={{@rental.attributes.location.x}}
+    @y={{@rental.attributes.location.y}}
+    @z ={{@rental.attributes.location.z}}
     @width="150"
     @height="150"
     alt="A map of {{@rental.title}}"

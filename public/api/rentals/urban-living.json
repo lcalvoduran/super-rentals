@@ -7,8 +7,9 @@
       "owner": "Mike Teavee",
       "city": "Seattle",
       "location": {
-        "lat": 47.6062,
-        "lng": -122.3321
+        "x": 3,
+        "y": 2,
+        "z": 4
       },
       "category": "Condo",
       "bedrooms": 1,

@@ -7,8 +7,9 @@
       "owner": "Violet Beauregarde",
       "city": "Portland",
       "location": {
-        "lat": 45.5175,
-        "lng": -122.6801
+        "x": 3,
+        "y": 2,
+        "z": 4
       },
       "category": "Apartment",
       "bedrooms": 3,
